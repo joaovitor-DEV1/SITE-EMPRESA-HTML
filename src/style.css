@@ -30,63 +30,172 @@ header p {
     font-size: 20px;
 }
 
-/* ====== CONTEÚDO PRINCIPAL ====== */
+/* CONTAINER PRINCIPAL */
 main {
+    width: 90%;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    width: 90%;
-    max-width: 900px; /* Aumentado para caber dois perfis lado a lado */
+    gap: 25px;
 }
 
-/* == PERFIS FICAREM LADO A LADO == */
+/* PERFIS ALINHADOS */
 .profiles {
     display: flex;
-    justify-content: center;
-    gap: 30px; 
-    flex-wrap: wrap; 
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-/* == CARTÕES == */
-.card {
-    background: rgba(255, 255, 255, 0.1);
+/* CARD DE PERFIL */
+.card-profile {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    backdrop-filter: blur(4px);
+    transition: 0.2s ease;
+}
+
+.card-profile:hover {
+    transform: scale(1.03);
+}
+
+/* IMAGENS */
+.card-profile img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    object-fit: cover;
+}
+
+/* CARD DE CONTATO EMBAIXO DO PERFIL */
+.contact-box {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.contact-box a {
+    display: inline-block;
+    margin: 8px 0;
+    padding: 6px 12px;
+    background: #fff;
+    color: #000;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* BOTÃO VOLTAR */
+.card-trajeto {
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     padding: 20px;
     text-align: center;
-    transition: transform 0.2s ease;
 }
 
-.card:hover {
-    transform: scale(1.05);
-}
-
-.card h2 {
-    margin-bottom: 20px;
-}
-
-/* == LINKS == */
-.card a {
+.card-trajeto a {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
     background: #ffffff;
     color: #000000;
-    text-decoration: none;
+    text-decoration: none;  
     border-radius: 10px;
     font-weight: bold;
 }
 
-/* == FOTOS == */
-main img {
-    height: 170px;
-    width: 170px;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    object-fit: cover; /* Faz a imagem preencher o círculo */
-}
-
-/* ====== RODAPÉ ====== */
+/* FOOTER */
 footer {
     margin: 30px 0px;
     font-size: 14px;
+}
+
+/* ========== FORMULÁRIO COM CAIXAS MENORES E CENTRALIZADAS ========== */
+
+/* Container do formulário */
+.formulario {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(7px);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza tudo */
+    gap: 20px;
+    max-width: 500px; /* Largura máxima menor */
+    margin: 0 auto; /* Centraliza o formulário */
+}
+
+/* Labels e campos */
+.formulario label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 5px;
+    width: 80%; /* Largura menor para os campos */
+}
+
+/* Campos de input (Nome e Email) menores */
+.formulario input[type="text"],
+.formulario input[type="email"] {
+    width: 100%;
+    padding: 10px 12px; /* Padding menor */
+    border: none;
+    border-radius: 8px;
+    margin-top: 5px;
+    font-size: 0.95rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    height: 40px; /* Altura menor */
+}
+
+/* Campo de mensagem também menor */
+.formulario textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 5px;
+    font-size: 0.95rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    min-height: 120px; /* Altura menor */
+    resize: vertical;
+    font-family: "Arial", sans-serif;
+}
+
+/* Botão Enviar */
+.formulario button[type="submit"] {
+    padding: 12px 30px; /* Botão menor */
+    background: #fff;
+    color: #04d45bff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px auto 0;
+    min-width: 180px; /* Largura menor */
+    height: 45px;
+}
+
+/* Efeitos de foco */
+.formulario input:focus,
+.formulario textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(4, 212, 91, 0.5);
+    background: #fff;
 }
